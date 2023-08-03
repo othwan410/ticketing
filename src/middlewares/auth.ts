@@ -35,7 +35,7 @@ class AuthMiddle {
   isAdmin = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const user = await User.findByPk(res.locals.user.userId, {
-        attributes: ['isAdmin'],
+        attributes: ['admin'],
         raw: true,
         nest: true,
       });
